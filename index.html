@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📱𝓤𝓰𝓹𝓱𝓸𝓷𝓮𝓜𝓸𝓭𝓑𝔂𝓚𝓱𝓸𝓲𝓽𝓸𝓷𝓰𝓭𝔃</title>
+    <title>📱𝐔𝐠𝐩𝐡𝐨𝐧𝐞𝐦𝐨𝐝𝐛𝐲𝐤𝐡𝐨𝐢𝐭𝐨𝐧𝐠𝐝𝐳📱</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
+            transition: all 0.3s ease-in-out;
         }
         body {
             display: flex;
@@ -17,90 +18,82 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-image: url('https://images-ext-1.discordapp.net/external/aSvynBUd_COWa5cZigkNhHO_3AlE2YFeJE7zb4zuXE0/https/cdn.nekotina.com/images/rJ5G5k_r8.png?format=webp&quality=lossless&width=825&height=583'); 
-            background-size: cover;
-            background-position: center;
-            overflow-x: hidden;
-        }
-        .container {
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-            overflow-x: auto;
-            white-space: nowrap; 
-            scroll-behavior: smooth;
-            max-width: 90vw;
-        }
-        /* Thanh cuộn tuỳ chỉnh */
-        .container::-webkit-scrollbar {
-            height: 8px;
-        }
-        .container::-webkit-scrollbar-track {
-            background: #222;
-            border-radius: 10px;
-        }
-        .container::-webkit-scrollbar-thumb {
-            background: #444;
-            border-radius: 10px;
-        }
-        .container::-webkit-scrollbar-thumb:hover {
-            background: #666;
-        }
-        .game-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            min-width: 150px;
-            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-        }
-        .game-box:hover {
-            transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        .game-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 10px;
-        }
-        .play-button {
-            background-color: blue;
+            background: black;
             color: white;
-            padding: 10px 20px;
+            opacity: 0;
+            animation: fadeInPage 0.7s ease-in-out forwards;
+        }
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background: #333;
+            color: white;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
             cursor: pointer;
-            transition: background 0.3s ease-in-out;
+            overflow: hidden;
+            position: relative;
         }
-        .play-button:hover {
-            background-color: darkblue;
+        .dark-mode-toggle:hover {
+            background: #555;
         }
-        .game-title {
+        /* Hiệu ứng ripple */
+        .ripple {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: rippleEffect 0.6s linear;
+        }
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        /* Chế độ sáng */
+        .light-mode {
+            background: white;
+            color: black;
+        }
+        .light-mode .dark-mode-toggle {
+            background: black;
             color: white;
+        }
+        /* Phần hiển thị thông tin Discord */
+        .web-credit {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
             font-size: 14px;
             font-weight: bold;
         }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.5s forwards;
+        .discord-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
         }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .light-mode .discord-link {
+            color: black;
         }
     </style>
 </head>
 <body>
-    <div class="web-credit">Code by khoitongdz | Server Discord: <a href="https://discord.gg/w26VGWmMPb" target="_blank" style="color: cyan; text-decoration: none;">Tham gia</a></div>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode(event, this)">🌙</button>
 
+    <div class="web-credit">
+        Code by khoitongdz | Server Discord: 
+        <a href="https://discord.gg/w26VGWmMPb" target="_blank" class="discord-link">Tham gia</a>
+    </div>
+    
     <div class="container fade-in">
         <!-- Thiết bị 1 -->
         <div class="game-box">
@@ -131,7 +124,33 @@
             <div class="game-title">Script blox fruit</div>
             <img src="https://media.discordapp.net/attachments/1251722181734563925/1353274517195198494/DALLE_2025-03-23_14.49.35_-_A_bold_gaming-style_text_logo_that_says_Script_Blox_Fruit_Free._The_text_should_have_a_strong_powerful_font_with_a_red_and_black_color_scheme._The.webp?ex=67e10e9b&is=67dfbd1b&hm=5a149215fc00fc673367273f1795b6c8484c802a844701e4cae80143315df5d8&=&format=webp&width=583&height=583" alt="Script" class="game-image">
             <button class="play-button" onclick="window.location.href='https://pastefy.app/gYopAiCU/raw'">Xem</button>
-        </div>
-    </div>
+          <script>
+        function toggleDarkMode(event, button) {
+            document.body.classList.toggle("light-mode");
+            if (document.body.classList.contains("light-mode")) {
+                button.textContent = "☀️";
+                localStorage.setItem("darkMode", "off");
+            } else {
+                button.textContent = "🌙";
+                localStorage.setItem("darkMode", "on");
+            }
+            showRipple(event, button);
+        }
+        if (localStorage.getItem("darkMode") === "off") {
+            document.body.classList.add("light-mode");
+            document.querySelector(".dark-mode-toggle").textContent = "☀️";
+        }
+        function showRipple(event, button) {
+            let ripple = document.createElement("span");
+            ripple.classList.add("ripple");
+            button.appendChild(ripple);
+            let rect = button.getBoundingClientRect();
+            ripple.style.left = `${event.clientX - rect.left}px`;
+            ripple.style.top = `${event.clientY - rect.top}px`;
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+    </script>
 </body>
 </html>
