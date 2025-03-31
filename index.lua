@@ -31,7 +31,7 @@ MainFrame.Name = "LoaderFrame"
 MainFrame.Size = UDim2.new(0, 0, 0, 0)
 MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-MainFrame.BackgroundTransparency = 0.3 -- Giảm độ mờ (trước là 0.7)
+MainFrame.BackgroundTransparency = 0.3 
 MainFrame.Parent = ScreenGui
 
 local Gradient = Instance.new("UIGradient")
@@ -2616,7 +2616,7 @@ v16.Home:AddButton({
 })
 v16.Home:AddButton({
     Title = "YouTube",
-    Description = "Click để xem kênh YouTube của Ducknovis!",
+    Description = "Click để xem kênh YouTube của KhoitongDZ!",
     Callback = function()
         setclipboard("https://www.youtube.com/@khoitongdz-999")
         game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -2636,13 +2636,11 @@ local ExecutorLevel = v16.Home:AddParagraph({
     Content = "Cấp độ executor của bạn: Đang kiểm tra..."
 })
 
--- Lấy tên executor
 local clientName = "Không xác định"
 if identifyexecutor then
     clientName = identifyexecutor() or "Không xác định"
 end
 
--- Cập nhật nội dung với cấp độ và tên executor
 ExecutorLevel:SetDesc("Cấp độ executor của bạn: " .. executorName .. "\nClient Bạn Đang Dùng Là: " .. clientName)
 
 _G.FastAttackStrix_Mode = "Super Fast Attack";
@@ -3836,7 +3834,7 @@ if Sea3 then
             _G.AutoFindPrehistoric = false;
             if not v513 then
                 v14:Notify({
-                    Title = "HieuDz Hub Roblox",
+                    Title = "KhoitongDZ Hub Roblox",
                     Content = "Đảo Dung Nham Tìm Thấy",
                     Duration = 10
                 });
@@ -3930,7 +3928,7 @@ if Sea3 then
             _G.AutoFindMirage = false;
             if not v513 then
                 v14:Notify({
-                    Title = "HieuDz Hub Roblox",
+                    Title = "KhoitongDZ Hub Roblox",
                     Content = "Đảo Bí Ẩn Tìm Thấy",
                     Duration = 10
                 });
@@ -4024,7 +4022,7 @@ if Sea3 then
             _G.AutoFindFrozen = false;
             if not v513 then
                 v14:Notify({
-                    Title = "HieuDz Hub Roblox",
+                    Title = "KhoitongDz Hub Roblox",
                     Content = "Đảo Leviathan Tìm Thấy",
                     Duration = 10
                 });
@@ -4649,7 +4647,7 @@ if Sea3 then
         end
         for v728, v729 in pairs(game:GetService("Workspace").Map.MysticIsland:GetDescendants()) do
             if v729:IsA("MeshPart") then
-                if (v729.MeshId == "http://www.roblox.com/asset/?id=74685297119537") then
+                if (v729.MeshId == "http://www.roblox.com/asset/?id=105486552530887") then
                     return v729;
                 end
             end
