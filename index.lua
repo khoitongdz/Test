@@ -46,7 +46,6 @@ local Corner = Instance.new("UICorner")
 Corner.CornerRadius = UDim.new(0, 12) 
 Corner.Parent = MainFrame
 
--- Tạo logo YouTube
 local Logo = Instance.new("ImageLabel")
 Logo.Name = "YoutubeLogo"
 Logo.Size = UDim2.new(0, 40, 0, 40)
@@ -60,7 +59,6 @@ local LogoCorner = Instance.new("UICorner")
 LogoCorner.CornerRadius = UDim.new(0, 20) 
 LogoCorner.Parent = Logo
 
--- Tạo tiêu đề kêu gọi đăng ký và join Discord
 local Title = Instance.new("TextLabel")
 Title.Name = "LoaderTitle"
 Title.Size = UDim2.new(0, 230, 0, 40)
@@ -76,14 +74,13 @@ Title.TextScaled = true
 Title.TextTruncate = Enum.TextTruncate.AtEnd
 Title.Parent = MainFrame
 
--- Tạo thanh tiến trình
 local ProgressBarBG = Instance.new("Frame")
 ProgressBarBG.Name = "ProgressBarBG"
 ProgressBarBG.Size = UDim2.new(0, 280, 0, 15)
 ProgressBarBG.Position = UDim2.new(0.5, 0, 0, 60)
 ProgressBarBG.AnchorPoint = Vector2.new(0.5, 0)
 ProgressBarBG.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-ProgressBarBG.BackgroundTransparency = 0.3 -- Giảm độ mờ (trước là 0.7)
+ProgressBarBG.BackgroundTransparency = 0.3 
 ProgressBarBG.Parent = MainFrame
 
 local ProgressBar = Instance.new("Frame")
@@ -100,11 +97,10 @@ BarGradient.Color = ColorSequence.new({
 BarGradient.Parent = ProgressBar
 
 local BarCorner = Instance.new("UICorner")
-BarCorner.CornerRadius = UDim.new(0, 8) -- Bo tròn thanh tiến trình
+BarCorner.CornerRadius = UDim.new(0, 8) 
 BarCorner.Parent = ProgressBarBG
 BarCorner:Clone().Parent = ProgressBar
 
--- Tạo dòng chữ nhỏ phía dưới
 local PoweredBy = Instance.new("TextLabel")
 PoweredBy.Name = "PoweredBy"
 PoweredBy.Size = UDim2.new(0, 280, 0, 20)
@@ -118,12 +114,10 @@ PoweredBy.TextColor3 = Color3.fromRGB(180, 180, 255)
 PoweredBy.TextTransparency = 1
 PoweredBy.Parent = MainFrame
 
--- Hàm tạo hiệu ứng tween
 local function TweenObject(obj, duration, properties)
     TweenService:Create(obj, TweenInfo.new(duration, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), properties):Play()
 end
 
--- Animation loading
 TweenObject(MainFrame, 0.3, {Size = UDim2.new(0, 320, 0, 110)})
 wait(0.3)
 
@@ -131,19 +125,19 @@ TweenObject(Logo, 0.5, {ImageTransparency = 0})
 TweenObject(Title, 0.5, {TextTransparency = 0})
 wait(0.5)
 
-TweenObject(ProgressBarBG, 0.5, {BackgroundTransparency = 0.1}) -- Đậm hơn khi hiển thị (trước là 0.5)
-TweenObject(ProgressBar, 0.5, {Size = UDim2.new(0.3, 0, 1, 0)}) -- Bắt đầu 30%
+TweenObject(ProgressBarBG, 0.5, {BackgroundTransparency = 0.1}) 
+TweenObject(ProgressBar, 0.5, {Size = UDim2.new(0.3, 0, 1, 0)}) 
 wait(0.5)
 
-TweenObject(ProgressBar, 1, {Size = UDim2.new(0.7, 0, 1, 0)}) -- 70%
+TweenObject(ProgressBar, 1, {Size = UDim2.new(0.7, 0, 1, 0)}) 
 wait(1)
 
 TweenObject(PoweredBy, 0.5, {TextTransparency = 0})
 wait(0.5)
 
-TweenObject(ProgressBar, 0.8, {Size = UDim2.new(0.9, 0, 1, 0)}) -- 90%
+TweenObject(ProgressBar, 0.8, {Size = UDim2.new(0.9, 0, 1, 0)}) 
 wait(0.8)
-TweenObject(ProgressBar, 0.5, {Size = UDim2.new(1, 0, 1, 0)}) -- 100%
+TweenObject(ProgressBar, 0.5, {Size = UDim2.new(1, 0, 1, 0)}) 
 wait(0.5)
 
 TweenObject(Logo, 0.5, {ImageTransparency = 1})
@@ -9016,7 +9010,7 @@ v165:OnChanged(function(v397)
     end
 end);
 local v166 = v16.Sea:AddParagraph({
-    Title = "Hoàn Thành Ải Draco V4 (Sớm Ra)",
+    Title = "Hoàn Thành Ải Draco V4 (soon)",
     Content = ""
 });
 local v167 = v16.Sea:AddToggle("ToggleTrialTeleport", {
@@ -9093,7 +9087,7 @@ end);
 local v107 = v16.Sea:AddToggle("ToggleMelee", {
     Title = "Dùng Melee",
     Description = "",
-    Default = false
+    Default = true
 });
 v107:OnChanged(function(v402)
     _G.UseMelee = v402;
