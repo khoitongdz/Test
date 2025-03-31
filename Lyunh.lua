@@ -239,8 +239,8 @@ ScreenGui:Destroy()
  end);
 local v14 = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))();
 local v15 = v14:CreateWindow({
-    Title = "KhoitongDZ Hub",
-    SubTitle = "Blox Fruit Script",
+    Title = "KhoitongDZ Hub|discord.gg/w26VGWmMPb",
+    SubTitle = " ",
     TabWidth = 160,
     Theme = "Dark",
     Acrylic = false,
